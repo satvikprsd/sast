@@ -1,0 +1,105 @@
+.grid {
+    width: 100%;
+    height: 90vh; 
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.grid-item {
+    position: relative;
+    background-color: #0a192f;
+    border: 1px solid rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gyro{
+    position: relative;
+    
+    height: 100px;
+    background-color: #0a192f;
+    border: 1px solid rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: white;
+    width: 100%;
+}
+.gyroitem {
+    grid-column: span 3;
+}
+
+.grid-item:hover {
+    transform: scale(1.05); 
+    border-color: rgba(0, 255, 255, 0.8); 
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+}
+
+.popup-content {
+    background: #112240; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-popup:hover {
+    color: #00ffff; 
+}
+
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: auto; 
+        height: auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr); 
+        grid-template-rows: auto;
+        height: auto;
+    }
+}
